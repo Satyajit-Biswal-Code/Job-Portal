@@ -10,12 +10,12 @@ export default function Contact() {
 
   const [success, setSuccess] = useState("");
 
-  // handle input change
+ 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  // handle submit
+
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -28,14 +28,14 @@ export default function Contact() {
 
     setSuccess("Message sent successfully ✅");
 
-    // clear form
+   
     setForm({
       name: "",
       email: "",
       message: "",
     });
 
-    // remove message after 3 sec
+    
     setTimeout(() => setSuccess(""), 3000);
   }
 
@@ -59,7 +59,7 @@ export default function Contact() {
           Contact Us
         </h2>
 
-        {/* Name */}
+       
         <div className="relative">
           <FaUser className="absolute top-3 left-3 text-gray-300" />
           <input
@@ -72,7 +72,7 @@ export default function Contact() {
           />
         </div>
 
-        {/* Email */}
+       
         <div className="relative">
           <FaEnvelope className="absolute top-3 left-3 text-gray-300" />
           <input
@@ -85,7 +85,7 @@ export default function Contact() {
           />
         </div>
 
-        {/* Message */}
+       
         <div className="relative">
           <FaCommentDots className="absolute top-3 left-3 text-gray-300" />
           <textarea
@@ -98,7 +98,7 @@ export default function Contact() {
           />
         </div>
 
-        {/* Button */}
+       
         <button
           type="submit"
           className="
@@ -115,7 +115,7 @@ export default function Contact() {
           Submit
         </button>
 
-        {/* Success message */}
+    
         {success && (
           <p className="text-green-400 text-center font-medium">{success}</p>
         )}
