@@ -14,7 +14,7 @@ export default function Jobs() {
   const [selectedJob, setSelectedJob] = useState(null);
   const [search, setSearch] = useState("");
 
-  // save job
+  
   function saving(job) {
     const alreadySaved = save.find((item) => item.Title === job.Title);
     if (!alreadySaved) {
@@ -22,7 +22,7 @@ export default function Jobs() {
     }
   }
 
-  // view job
+
   function view(job) {
     setSelectedJob(job);
   }
@@ -31,7 +31,7 @@ export default function Jobs() {
     setSelectedJob(null);
   }
 
-  // search filter
+ 
   const filteredJobs = check.filter(
     (job) =>
       job.Title.toLowerCase().includes(search.toLowerCase()) ||
@@ -41,7 +41,7 @@ export default function Jobs() {
 
   return (
     <div className="p-4">
-      {/* Search box */}
+    
       <div className="relative mb-5">
         <IoMdSearch className="absolute top-3 left-3 text-gray-500 text-xl" />
         <input
@@ -53,7 +53,7 @@ export default function Jobs() {
         />
       </div>
 
-      {/* Job cards */}
+    
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {filteredJobs.length === 0 ? (
           <p>No jobs found</p>
@@ -98,7 +98,7 @@ export default function Jobs() {
         )}
       </div>
 
-      {/* Saved Jobs */}
+      
       <div className="mt-10">
         <h2 className="text-xl font-bold mb-3">Saved Jobs</h2>
 
